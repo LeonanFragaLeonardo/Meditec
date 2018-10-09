@@ -1,0 +1,1 @@
+C:\Users\otica\source\repos\MeditecCross\MeditecCross\MeditecCross.UWP\MeditecCross.UWP.csproj;x86
