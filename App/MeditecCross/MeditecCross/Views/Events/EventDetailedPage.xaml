@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeditecCross.Views.Events.EventDetailedPage"
+             BackgroundColor="#273238"
+             Title="{Binding EventTitle}">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ScrollView Grid.Row="0">
+                <StackLayout>
+                    <Frame
+                Margin="16,0,16,0"
+                BackgroundColor="White"
+                CornerRadius="20">
+                        <StackLayout Orientation="Horizontal">
+                            <Label
+                        HorizontalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        Text="Descrição:" TextColor="DarkSlateGray" FontAttributes="Bold"/>
+                            <Label
+                        HorizontalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        Text="{Binding Description}" TextColor="#9e9d24" />
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame
+                Margin="16,0,16,0"
+                BackgroundColor="White"
+                CornerRadius="20">
+                        <StackLayout Orientation="Horizontal">
+                            <Label
+                        HorizontalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        Text="Local:" TextColor="DarkSlateGray" FontAttributes="Bold"/>
+                            <Label
+                        HorizontalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        Text="{Binding Place}" TextColor="#9e9d24" />
+                        </StackLayout>
+                    </Frame>
+
+
+                    <Label
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Start">
+                        <Label.FormattedText >
+                            <FormattedString>
+                                <Span Text="Instrutor(es) " ForegroundColor="White" FontAttributes="Bold" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+            </ScrollView>
+            <ListView
+                Margin="16"
+                Grid.Row="1"
+                x:Name="listViewEvents"
+                ItemsSource="{Binding Trainers}"
+                SeparatorVisibility="None"
+                HasUnevenRows="True"
+                RowHeight="-1">
+                <ListView.ItemTemplate Padding="5">
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame
+                                Margin="0,10,0,0"
+                                Padding="8"
+                                CornerRadius="15"
+                                BackgroundColor="White">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40*"/>
+                                        <ColumnDefinition Width="30*"/>
+                                        <ColumnDefinition Width="30*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Label 
+                                        Grid.Row="0" Grid.ColumnSpan="3" 
+                                        Text="{Binding Name, StringFormat='Nome: {0}'}"
+                                        TextColor="#273238"
+                                        FontSize="Large"
+                                        FontAttributes="Bold"/>
+                                    <Label 
+                                        Grid.Row="1" Grid.ColumnSpan="3" 
+                                        Text="{Binding Resume, StringFormat='Minicurriculum: {0}'}"
+                                        TextColor="DarkGray"
+                                        FontSize="Medium"/>
+                                    <Picker 
+                                        x:Name="pickerContact"
+                                        SelectedItem="{Binding SelectedContact}"
+                                        Grid.Row="2"
+                                        Grid.ColumnSpan="3"
+                                        Title="Ver Contatos"
+                                        ItemsSource="{Binding TrainerContacts}"/>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

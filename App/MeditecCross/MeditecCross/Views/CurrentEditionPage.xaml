@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeditecCross.Views.CurrentEditionPage"
+             BackgroundColor="#273238">
+    <ContentPage.Content>
+
+        <ScrollView>
+            
+        
+        <StackLayout>
+            <Label 
+                   Text="MEDITEC IX" 
+                   HorizontalOptions="Center"
+                   TextColor="White"
+                   FontSize="50"
+                   FontAttributes="Bold" 
+                   FontFamily="Lobster"/>
+            <Label Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   Text="Medianeira in Technology"
+                   HorizontalOptions="Center"
+                   TextColor="#ffcc29"
+                   FontAttributes="Bold"/>
+
+            <Label Grid.Row="2" 
+                   Grid.ColumnSpan="2"
+                   Margin="0,20,0,20"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center">
+                <Label.FormattedText >
+                    <FormattedString>
+                        <Span Text="Edição atual: " ForegroundColor="White" FontAttributes="Bold" />
+                        <Span Text="15 e 16 de outubro de 2018, Medianeira – Paraná" ForegroundColor="White"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            
+            <Button
+                BorderRadius="15"
+                TextColor="#9e9d24"
+                Margin="30,0,30,0"
+                BackgroundColor="White"
+                Clicked="OnButtonInscriptionClicked"
+                Text="Realizar Inscrição"/>
+            <Button
+                BorderRadius="15"
+                TextColor="#9e9d24"
+                Margin="30,16,30,0"
+                BackgroundColor="White"
+                Clicked="OnButtonEventsClicked"
+                Text="Ver Eventos"/>
+        </StackLayout>
+        </ScrollView>
+        <!--
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="0"
+                   Grid.RowSpan="2"
+                   Grid.ColumnSpan="2"
+                   BackgroundColor="#273238"
+                   CornerRadius="50"
+                   HasShadow="True">
+                <Label 
+                   Text="MEDITEC" 
+                   HorizontalOptions="Center"
+                   TextColor="White"
+                   FontSize="50"
+                   FontAttributes="Bold" 
+                   FontFamily="Lobster"/>
+            </Frame>
+
+            <Label Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   Text="Medianeira in Technology"
+                   HorizontalOptions="Center"
+                   TextColor="#9e9d24"
+                   FontAttributes="Bold"/>
+          
+            <Frame
+                Margin="20"
+                CornerRadius="50"
+                Grid.Row="2"
+                Grid.RowSpan="3"
+                Grid.ColumnSpan="2"
+                BackgroundColor="White"
+                HorizontalOptions="Center">
+                <Label Grid.Row="2" 
+                   Grid.ColumnSpan="2"
+                   HorizontalOptions="Center">
+                    <Label.FormattedText >
+                        <FormattedString>
+                            <Span Text="Edição atual: " ForegroundColor="#9e9d24" FontAttributes="Bold" />
+                            <Span Text="15 e 16 de outubro de 2018, Medianeira – Paraná" ForegroundColor="#9e9d24"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Frame>
+            
+            <Button
+                BorderRadius="10"
+                Grid.Row="3"
+                Grid.ColumnSpan="2"
+                TextColor="White"
+                Margin="30,0,30,0"
+                BackgroundColor="#9e9d24"
+                Text="Realizar Inscrição"/>
+        </Grid> -->
+    </ContentPage.Content>
+</ContentPage>
